@@ -1,0 +1,59 @@
+ALGORITHM algorithm_name
+VAR 
+    //1array
+    tab : ARRAY_OF INTEGER[5];
+    pos,elt : INTEGER;
+    //2matrix
+    a : ARRAY_OF INTEGER[M][N];
+    b : ARRAY_OF INTEGER[M][O];
+    c : ARRAY_OF INTEGER[M][O];
+    //3string
+            //1
+            str: STRING[]:= "   GOMYCODE"
+            //2
+            str1,str2:String[50];
+    //4Struct
+        Person :	STRUCT
+                            cin : INTEGER;
+                            name : STRING;
+                            age: INTEGER;
+                        END_STRUCT
+        tab : ARRAY_OF Person[10];  
+
+     //5Stack
+     state_stack : CHAR; 
+    c : CHAR := ' ';
+    stk : STACK;
+    wrong : BOOLEAN := FALSE;
+
+    // 6 hash table
+    htab:HASH_TABLE<INTEGER,STRING>
+
+    // 7 linked list
+    List :	STRUCT
+                        data : INTEGER; //any data structure
+                        next : ^List; //^  pointer
+                        
+                    END_STRUCT
+
+    first: ^List :=NULL //pointer
+    p: ^List :=NULL //pointer
+    c:CHAR;
+    i:INTEGER:=0;                
+
+BEGIN
+ //1111: ARRAY   
+ //
+    FOR i FROM 0 TO tab.length-1   DO
+        read(tab[i])
+    END_FOR
+
+    //insert element (pos of the element elt and value of the element)
+      j := tab.length-1;
+    WHILE (j >= pos) DO
+        tab[j+1] := tab[j]; // translation from left to right
+        j := j-1; // update index
+    END_WHILE
+
+    tab[pos] := elt;
+  // 111111
